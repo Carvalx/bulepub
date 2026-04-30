@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fuente de google fonts, poppins queda bien con el estilo del bar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/copa.png" type="image/x-icon">
     <title>BulePub</title>
 </head>
 
 <body>
-    <!-- Barra de menú -->
+
+    <!-- ancla para el boton de inicio del menu -->
     <div id="inicio"></div>
+
+    <!-- barra de navegacion fija arriba -->
     <header>
         <nav>
-            <a href="index.html"><img src="img/bulepub.png" alt="Logo"></a>
+            <a href="index.html"><img src="img/bulepub.png" alt="Logo BulePub"></a>
+            <!-- arregle los enlaces, antes estaban sueltos fuera de los li -->
             <ul>
-                <a href="#inicio">INICIO</a>
-                <li>
-                    <p class="separador">|</p>
-                </li>
-                <a href="#nuestrosServicios">SERVICIOS</a>
-                <li>
-                    <p class="separador">|</p>
-                </li>
-                <a href="#reservas">RESERVAS</a>
-                <li>
-                    <p class="separador">|</p>
-                </li>
-                <a href="#galeria">GALERIA</a>
-                <li>
-                    <p class="separador">|</p>
-                </li>
-                <a href="#sobreNosotros">SOBRE NOSOTROS</a>
-                <li>
-                    <p class="separador">|</p>
-                </li>
-                <a href="#contacto">CONTACTO</a>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#nuestrosServicios">SERVICIOS</a></li>
+                <li><a href="#reservas">RESERVAS</a></li>
+                <li><a href="#galeria">GALERÍA</a></li>
+                <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- boton para volver al inicio -->
     <button id="topBtn">⬆</button>
 
+    <!-- seccion del carrusel de imagenes -->
     <section class="carousel-section" id="carousel">
         <div class="carousel">
             <div class="carousel-slide">
@@ -61,18 +56,21 @@
             </div>
         </div>
 
-        <div class="carousel-controls" id="nuestrosServicios"> <!-- Nuestro servicios -->
+        <!-- botones de prev y next del carrusel -->
+        <div class="carousel-controls">
             <button class="prev" id="prev">&#10094;</button>
             <button class="next" id="next">&#10095;</button>
         </div>
 
+        <!-- puntitos indicadores del carrusel -->
         <div class="carousel-indicators">
             <span class="dot" data-index="0"></span>
             <span class="dot" data-index="1"></span>
         </div>
     </section>
 
-    <section class="nuestros-servicios">
+    <!-- seccion de nuestros servicios, puse el id aqui que antes estaba en el carrusel -->
+    <section class="nuestros-servicios" id="nuestrosServicios">
         <br>
         <div>
             <hr>
@@ -83,17 +81,15 @@
             <div class="item-servicios">
                 <img src="img/bar.jpg" alt="Imagen bar">
                 <h3>Barra</h3>
-                <p>Ofrecemos muchas variedades de bebidas, garantizando ofrecer la máxima calidad a un coste ajustado.
-                </p>
+                <p>Ofrecemos muchas variedades de bebidas, garantizando ofrecer la máxima calidad a un coste ajustado.</p>
             </div>
             <div class="item-servicios">
                 <img src="img/restaurante.jpg" alt="Imagen restaurante">
                 <h3>Restaurante</h3>
-                <p>En nuestra cocina podrás encontrar distintas comidas para degustar, tapas, hamburguesas, hot-dogs,
-                    entre otros.</p>
+                <p>En nuestra cocina podrás encontrar distintas comidas para degustar, tapas, hamburguesas, hot-dogs, entre otros.</p>
             </div>
             <div class="item-servicios">
-                <img src="img/billar.jpg" alt="Imagen servicios">
+                <img src="img/billar.jpg" alt="Imagen billar">
                 <h3>Billar</h3>
                 <p>Nuestras mesas siempre brindarán una experiencia gratificante a cada usuario.
 
@@ -104,15 +100,15 @@
                 <h3>Dianas</h3>
                 <p>Si gustas venir a jugar y probar tu puntería a las dianas con tus amigos.
 
-                    A solo 1€ x Juego.
-                </p>
+                    A solo 1€ x Juego.</p>
             </div>
             <div class="item-servicios">
-                <img src="img/transmicion.jpg" alt="Imagen transmicion">
-                <h3>Transmición</h3>
-                <p>Transmición a tiempo real de los partidos mas populares.</p>
+                <!-- corregi el typo: Transmición -> Transmisión -->
+                <img src="img/transmicion.jpg" alt="Imagen transmisión">
+                <h3>Transmisión</h3>
+                <p>Transmisión a tiempo real de los partidos más populares.</p>
             </div>
-            <div class="item-servicios" id="reservas"> <!-- Reservas -->
+            <div class="item-servicios">
                 <img src="img/lucesymusica.jpg" alt="Imagen luces y musica">
                 <h3>Ambiente y música</h3>
                 <p>BulePub ofrece un gran ambiente con luces led y música para pasarla bien con tus colegas.</p>
@@ -121,16 +117,15 @@
     </section>
 
     <div class="hr1">
-        <!-- <hr> -->
         <hr>
     </div>
 
-
-    <section class="reservas">
+    <!-- seccion de reservas, movi el id aqui que antes estaba perdido en otro lado -->
+    <section class="reservas" id="reservas">
         <br>
         <div>
             <hr>
-            <h2>RESERVAS 📅</h2>
+            <h2>RESERVAS</h2>
             <hr>
         </div>
         <div class="texto-reservas">
@@ -138,95 +133,129 @@
                 <p>Si deseas reservar mesas ó el local para eventos puedes contactarnos mediante Whatsapp y con gusto te
                     ayudaremos a hacer la reserva, que se ajuste a tus necesidades.
 
-                    Si gustas reservar, por favor presiona en el siguiente botón para hablar contigo 😉
+                    Si gustas reservar, por favor presiona en el siguiente botón para hablar contigo
                 </p>
-                <button id="galeria">HACER RESERVA</button> <!-- Galeria -->
+                <!-- enlace de whatsapp, antes el boton no hacia nada -->
+                <a href="https://wa.me/34614445671" target="_blank">
+                    <button class="btn-reserva">HACER RESERVA</button>
+                </a>
             </div>
             <div>
-                <img src="img/reserva.jpg" alt="">
+                <img src="img/reserva.jpg" alt="Imagen reserva">
             </div>
         </div>
     </section>
 
     <div class="hr1">
-        <br>
-        <br>
-        <!-- <hr> -->
         <hr>
     </div>
 
-    <section class="galeria">
+    <!-- galeria de fotos, movi el id aqui que antes estaba en la ultima foto -->
+    <section class="galeria" id="galeria">
         <br>
         <div>
             <hr>
-            <h2>GALERíA 📸 </h2>
+            <h2>GALERÍA</h2>
             <hr>
         </div>
-        <div>
-            <img src="img/foto1.jpg" alt="Foto 1">
-            <img src="img/foto2.jpg" alt="Foto 2">
-            <img src="img/foto3.avif" alt="Foto 3">
-            <img src="img/foto4.jpg" alt="Foto 4">
-            <img src="img/foto5.jpg" alt="Foto 5">
-            <img src="img/foto6.avif" alt="Foto 6" id="sobreNosotros">
+        <!-- nuevo grid tipo masonry: la primera foto es mas grande -->
+        <div class="galeria-grid">
+            <div class="galeria-item galeria-featured">
+                <img src="img/foto1.jpg" alt="Foto 1">
+                <div class="galeria-overlay"></div>
+            </div>
+            <div class="galeria-item">
+                <img src="img/foto2.jpg" alt="Foto 2">
+                <div class="galeria-overlay"></div>
+            </div>
+            <div class="galeria-item">
+                <img src="img/foto3.avif" alt="Foto 3">
+                <div class="galeria-overlay"></div>
+            </div>
+            <div class="galeria-item">
+                <img src="img/foto4.jpg" alt="Foto 4">
+                <div class="galeria-overlay"></div>
+            </div>
+            <div class="galeria-item">
+                <img src="img/foto5.jpg" alt="Foto 5">
+                <div class="galeria-overlay"></div>
+            </div>
+            <div class="galeria-item">
+                <img src="img/foto6.avif" alt="Foto 6">
+                <div class="galeria-overlay"></div>
+            </div>
         </div>
     </section>
 
     <div class="hr1">
-        <br>
-        <br>
-        <!-- <hr> -->
         <hr>
     </div>
 
-    <section class="sobre-nosotros">
+    <!-- sobre nosotros, ahora con layout de imagen + texto + stats -->
+    <section class="sobre-nosotros" id="sobreNosotros">
         <br>
         <div>
             <hr>
-            <h2>SOBRE NOSOTROS 🎱 </h2>
+            <h2>SOBRE NOSOTROS</h2>
             <hr>
         </div>
-        <div class="">
-            <p>En "BulePub" creemos en crear más que un simple bar: queremos ofrecer un espacio donde las personas se
-                conecten, disfruten y vivan experiencias únicas. Ubicados en el corazón de Benimaclet, Valencia, somos
-                un punto de encuentro diseñado para un público joven y dinámico que busca calidad, innovación y un
-                ambiente acogedor.
+        <div class="sobre-contenido">
+            <!-- imagen del local con una etiqueta encima -->
+            <div class="sobre-imagen-wrap">
+                <img src="img/billar-mesa.jpg" alt="Mesa de billar BulePub">
+                <span class="sobre-badge">Benimaclet · Valencia</span>
+            </div>
+            <!-- texto e info a la derecha -->
+            <div class="sobre-texto">
+                <p>En "BulePub" creemos en crear más que un simple bar: queremos ofrecer un espacio donde las personas se
+                    conecten, disfruten y vivan experiencias únicas. Ubicados en el corazón de Benimaclet, Valencia, somos
+                    un punto de encuentro diseñado para un público joven y dinámico que busca calidad, innovación y un
+                    ambiente acogedor.
 
-                Nuestra pasión por la hostelería nos ha llevado a crear un concepto diferente, combinando bebidas únicas
-                como nuestras micheladas personalizables y el tradicional canelazo con entretenimiento que fomenta la
-                interacción social, como mesas de billar. Además, integramos tecnología para hacer tu experiencia más
-                cómoda y moderna, permitiéndote realizar pedidos online, reservas y explorar un menú interactivo.
+                    Nuestra pasión por la hostelería nos ha llevado a crear un concepto diferente, combinando bebidas únicas
+                    como nuestras micheladas personalizables y el tradicional canelazo con entretenimiento que fomenta la
+                    interacción social, como mesas de billar. Además, integramos tecnología para hacer tu experiencia más
+                    cómoda y moderna.
 
-                En "BulePub" no solo ofrecemos productos de calidad, sino también un ambiente vibrante donde cada visita
-                se convierte en un momento especial. Estamos comprometidos con la sostenibilidad, el apoyo a proveedores
-                locales y la innovación constante para garantizar que siempre encuentres algo nuevo y emocionante cuando
-                nos visites.
+                    ¡Ven a "BulePub" y sé parte de nuestra comunidad donde la diversión, la creatividad y la buena compañía
+                    son protagonistas!</p>
 
-                ¡Ven a "BulePub" y sé parte de nuestra comunidad donde la diversión, la creatividad y la buena compañía
-                son protagonistas!</p>
-            <img src="img/billar-mesa.jpg" alt="">
+                <!-- cajitas con datos del bar, le dan vida a la seccion -->
+                <div class="sobre-stats">
+                    <div class="stat-box">
+                        <span class="stat-num">2€</span>
+                        <span class="stat-label">por partida de billar</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">1€</span>
+                        <span class="stat-label">por partida de dianas</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">6d</span>
+                        <span class="stat-label">abierto a la semana</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <div class="hr1">
-        <br>
-        <br>
-        <!-- <hr> -->
         <hr>
     </div>
 
+    <!-- seccion de contacto con el mapa -->
     <section class="contacto" id="contacto">
         <br>
         <div>
             <hr>
-            <h2>CONTACTO 📞</h2>
+            <h2>CONTACTO</h2>
             <hr>
         </div>
         <div class="ubicacion">
             <div>
                 <h2>Ubicación y dirección de nuestro local</h2>
                 <p>Ven y visita nuestro local para que puedas tener una gran experiencia en nuestro bar junto a tus
-                    amigos. Contamos también con restaurante, billar, dianas y muy buen ambiente con musica y luces.
+                    amigos. Contamos también con restaurante, billar, dianas y muy buen ambiente con música y luces.
 
                     Carrer de Leonor Jovani, 16, Benimaclet, 46020 València, Valencia
 
@@ -241,23 +270,18 @@
     </section>
 
     <div class="hr1">
-        <br>
-        <br>
-        <!-- <hr> -->
         <hr>
     </div>
 
+    <!-- footer con logo, enlaces, horarios y contacto -->
     <div class="footer">
         <div class="item-footer">
-            <img src="img/bulepub.png" alt="No image" title="Clarity Pet">
+            <img src="img/bulepub.png" alt="Logo BulePub">
             <h3>Redes sociales:</h3>
             <div class="redes-sociales">
-                <a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" title="Facebook"
-                        alt="No image"></a>
-                <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.png" title="Instagram"
-                        alt=""></a>
-                <a href="https://www.youtube.com" target="_blank"><img src="img/youtube.png" title="Youtube"
-                        alt="No image"></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" title="Facebook" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.png" title="Instagram" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="img/youtube.png" title="Youtube" alt="Youtube"></a>
             </div>
         </div>
         <div class="item-footer">
@@ -273,40 +297,28 @@
         <div class="item-footer">
             <h3>Horarios:</h3>
             <ul>
-                <li>
-                    <h3>Lunes - Viernes</h3>
-                </li>
-                <li>
-                    <p>12:00 PM - 01:00 AM</p>
-                </li>
-                <li>
-                    <h3>Sabados</h3>
-                </li>
-                <li>
-                    <p>10:00 AM - 02:00 PM</p>
-                </li>
+                <li><h3>Lunes - Viernes</h3></li>
+                <li><p>12:00 PM - 01:00 AM</p></li>
+                <li><h3>Sábados</h3></li>
+                <li><p>10:00 AM - 02:00 AM</p></li>
             </ul>
         </div>
         <div class="item-footer">
             <h3>Contacto:</h3>
             <ul>
-                <li>
-                    <p>Carrer de Leonor Jovani, 16, Benimaclet, 46020 València, Valencia</p>
-                </li>
-                <li>
-                    <p>(+34) 614-445-671</p>
-                </li>
-                <li><a href="mailto: bulepub.beni@gmail.com">bulepub.beni@gmail.com</a></li>
+                <li><p>Carrer de Leonor Jovani, 16, Benimaclet, 46020 València, Valencia</p></li>
+                <li><p>(+34) 614-445-671</p></li>
+                <!-- corregi el mailto: tenia un espacio despues de los dos puntos -->
+                <li><a href="mailto:bulepub.beni@gmail.com">bulepub.beni@gmail.com</a></li>
             </ul>
         </div>
-
-        <br>
     </div>
 
+    <!-- pie de pagina con copyright, corregi el &copy que le faltaba el punto y coma -->
     <div class="derecho">
         <hr>
-        <h5>Copyrights &copy 2025 Bar Billar BulePub | Todos los derechos reservados | Diseñado por <a
-                href="https://www.instagram.com/carlosmacero_/" title="Carlos Macero" target="_blank">Carvalx</a> </h5>
+        <h5>Copyrights &copy; 2025 Bar Billar BulePub | Todos los derechos reservados | Diseñado por <a
+                href="https://www.instagram.com/carlosmacero_/" title="Carlos Macero" target="_blank">Carvalx</a></h5>
     </div>
 
     <script src="script.js"></script>
