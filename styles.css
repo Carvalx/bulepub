@@ -51,7 +51,8 @@ header nav {
 }
 
 header nav img {
-    height: 75px;
+    margin-top: 5px;
+    height: 60px;
 }
 
 header nav ul {
