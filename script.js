@@ -1,3 +1,5 @@
+
+// DOM general para esta pagina
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.carousel-slide');
     const dots = document.querySelectorAll('.dot');
