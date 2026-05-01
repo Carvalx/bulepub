@@ -214,6 +214,7 @@ header nav ul li a:hover {
     background-color: #000;
 }
 
+
 .servicios {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -780,10 +781,29 @@ h5 a:hover {
         font-size: 0.9rem;
     }
 
+    .nuestros-servicios h2 {
+        font-size: 18px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
     /* servicios: de 3 columnas a 1 */
     .servicios {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         margin: 10px;
+        gap: 10px;
+    }
+
+    .item-servicios img {
+        height: 140px;
+    }
+
+    .item-servicios h3 {
+        font-size: 18px;
+    }
+
+    .item-servicios p {
+        font-size: 13px;
     }
 
     /* reservas: de 2 columnas a 1 */
