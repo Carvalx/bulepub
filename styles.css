@@ -1,7 +1,15 @@
 /*
     Generales
-    use poppins porque queda bien con el estilo del bar
+    uso poppins porque queda bien con el estilo del bar
 */
+
+/* evita scroll horizontal en movil */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     background-color: #000;
@@ -54,7 +62,7 @@ header nav ul {
     margin: 0;
 }
 
-/* los links ahora van dentro de li, esto es lo correcto en html */
+/* los links van dentro de li, esto es lo correcto en html */
 header nav ul li a {
     font-size: 16px;
     font-weight: 500;
@@ -69,8 +77,9 @@ header nav ul li a:hover {
 }
 
 /*
-    Inicio - Carrusel
-    ajuste el margin-top para que coincida con la nueva altura del nav
+    Carrusel
+    ahora usa solo opacidad para mostrar/ocultar slides
+    esto funciona igual en escritorio y en movil sin problemas
 */
 .carousel-section {
     position: relative;
@@ -81,38 +90,38 @@ header nav ul li a:hover {
     margin: 80px 0 0 0;
 }
 
+/* el carousel ya no necesita width 200%, cada slide se apila */
 .carousel {
     position: relative;
-    width: 200%;
+    width: 100%;
     height: 100%;
-    display: flex;
-    transition: transform 1s ease;
 }
 
+/* todos los slides ocupan el mismo espacio, apilados con absolute */
 .carousel-slide {
-    position: relative;
-    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 0.8s ease;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s ease;
+    transition: transform 6s ease;
 }
 
+/* el slide activo se ve, los demas no */
 .carousel-slide.active {
     opacity: 1;
 }
 
 .carousel-slide.active img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .caption {
@@ -120,12 +129,16 @@ header nav ul li a:hover {
     flex-direction: column;
     position: absolute;
     bottom: 10%;
+    left: 0;
+    right: 0;
     color: white;
     font-size: 1.5rem;
     border-radius: 5px;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .caption h1,
@@ -149,6 +162,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    z-index: 10;
 }
 
 .carousel-controls button {
@@ -171,6 +185,7 @@ header nav ul li a:hover {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    z-index: 10;
 }
 
 .carousel-indicators .dot {
@@ -296,7 +311,7 @@ header nav ul li a:hover {
     width: 500px;
 }
 
-/* el boton ahora tiene clase propia para no confundir con ids de ancla */
+/* el boton tiene clase propia */
 .btn-reserva {
     margin: 20px 0 0;
     padding: 20px;
@@ -317,7 +332,6 @@ header nav ul li a:hover {
     font-weight: 600;
 }
 
-/* el a del boton que no tenga estilo raro */
 .texto-reservas a {
     text-decoration: none;
 }
@@ -330,7 +344,7 @@ header nav ul li a:hover {
 
 /*
     Galeria
-    nuevo diseño tipo masonry: la primera foto ocupa 2 filas
+    grid tipo masonry: la primera foto ocupa 2 filas
 */
 .galeria {
     display: flex;
@@ -350,7 +364,6 @@ header nav ul li a:hover {
     box-sizing: border-box;
 }
 
-/* cada foto con overflow hidden para que el hover no se salga */
 .galeria-item {
     position: relative;
     overflow: hidden;
@@ -369,7 +382,7 @@ header nav ul li a:hover {
     transform: scale(1.07);
 }
 
-/* overlay azul suave que aparece al hacer hover */
+/* overlay azul suave al hacer hover */
 .galeria-overlay {
     position: absolute;
     inset: 0;
@@ -382,14 +395,14 @@ header nav ul li a:hover {
     background-color: rgba(0, 170, 255, 0.18);
 }
 
-/* la primera foto ocupa 2 filas de alto, da efecto masonry */
+/* la primera foto ocupa 2 filas, efecto masonry */
 .galeria-featured {
     grid-row: span 2;
 }
 
 /*
     Sobre nosotros
-    nuevo layout: imagen a la izquierda, texto a la derecha
+    layout imagen izquierda + texto derecha
 */
 .sobre-nosotros {
     display: flex;
@@ -399,7 +412,6 @@ header nav ul li a:hover {
     box-sizing: border-box;
 }
 
-/* contenedor principal con dos columnas */
 .sobre-contenido {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -409,7 +421,6 @@ header nav ul li a:hover {
     margin: 20px 0;
 }
 
-/* wrap de la imagen con posicion relativa para el badge encima */
 .sobre-imagen-wrap {
     position: relative;
     border-radius: 20px;
@@ -452,7 +463,7 @@ header nav ul li a:hover {
     line-height: 1.8;
 }
 
-/* cajitas de estadisticas del bar */
+/* cajitas de datos del bar */
 .sobre-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -645,39 +656,127 @@ h5 a:hover {
 
 
 /* ================================
-   RESPONSIVE — pantallas pequeñas
-   esto se aplica cuando el ancho
-   es menor a 768px (movil / tablet)
+   MENU HAMBURGUESA
+   solo visible en movil
+   ================================ */
+
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1100;
+}
+
+/* cada linea del icono hamburguesa */
+.hamburguesa span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* animacion a X cuando esta abierto */
+.hamburguesa.abierto span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburguesa.abierto span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguesa.abierto span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* panel desplegable, oculto por defecto */
+.menu-movil {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    border-top: 2px solid #00aaffce;
+}
+
+/* enlaces del panel movil */
+.menu-movil-link {
+    color: #00aaffce;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 18px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background-color 0.2s, color 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-movil-link:hover {
+    color: aqua;
+    background-color: rgba(0, 170, 255, 0.08);
+}
+
+
+/* ================================
+   RESPONSIVE — movil y tablet
    ================================ */
 @media (max-width: 768px) {
 
-    /* la nav se pone en columna en movil */
+    /* nav: logo izquierda, hamburguesa derecha, en una sola fila */
     header nav {
-        flex-direction: column;
-        height: auto;
-        padding: 12px 20px;
-        gap: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 80px;
+        padding: 0 20px;
     }
 
     header nav img {
-        height: 55px;
+        height: 60px;
     }
 
-    /* los links se envuelven para que quepan */
+    /* escondemos el menu horizontal de escritorio */
     header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px 14px;
+        display: none;
     }
 
-    header nav ul li a {
-        font-size: 13px;
+    /* mostramos el boton hamburguesa */
+    .hamburguesa {
+        display: flex;
     }
 
-    /* el carrusel necesita mas margen porque la nav ahora es mas alta */
+    /* cuando el panel esta activo lo mostramos */
+    .menu-movil.activo {
+        display: flex;
+    }
+
+    /* carrusel ocupa menos alto en movil */
     .carousel-section {
-        margin-top: 150px;
-        height: 60vh;
+        margin-top: 80px;
+        height: 55vh;
+    }
+
+    /* texto del carrusel mas pequeño */
+    .caption {
+        font-size: 1rem;
+        gap: 10px;
+        bottom: 15%;
+    }
+
+    .caption h1 {
+        font-size: 1.4rem;
+    }
+
+    .caption p {
+        font-size: 0.9rem;
     }
 
     /* servicios: de 3 columnas a 1 */
@@ -697,7 +796,7 @@ h5 a:hover {
         font-size: 17px;
     }
 
-    /* galeria en movil: 2 columnas simples sin el featured */
+    /* galeria en movil: 2 columnas, sin el efecto masonry */
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -705,7 +804,6 @@ h5 a:hover {
         width: calc(100% - 20px);
     }
 
-    /* en movil quitamos el span 2 de la primera foto */
     .galeria-featured {
         grid-row: span 1;
     }
@@ -727,11 +825,6 @@ h5 a:hover {
 
     .sobre-texto p {
         font-size: 15px;
-    }
-
-    /* las cajitas de stats tambien en 1 columna */
-    .sobre-stats {
-        grid-template-columns: repeat(3, 1fr);
     }
 
     /* contacto: de 2 columnas a 1 */
@@ -766,7 +859,7 @@ h5 a:hover {
 
 }
 
-/* para pantallas muy pequeñas como iphone se */
+/* pantallas muy pequeñas tipo iphone */
 @media (max-width: 480px) {
 
     .footer {

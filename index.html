@@ -20,19 +20,37 @@
 
     <!-- barra de navegacion fija arriba -->
     <header>
-        <nav>
-            <a href="index.html"><img src="img/bulepub.png" alt="Logo BulePub"></a>
-            <!-- arregle los enlaces, antes estaban sueltos fuera de los li -->
-            <ul>
-                <li><a href="#inicio">INICIO</a></li>
-                <li><a href="#nuestrosServicios">SERVICIOS</a></li>
-                <li><a href="#reservas">RESERVAS</a></li>
-                <li><a href="#galeria">GALERÍA</a></li>
-                <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html"><img src="img/bulepub.png" alt="Logo BulePub"></a>
+
+        <!-- boton de las 3 lineas, solo visible en movil -->
+        <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- menu normal para escritorio -->
+        <ul id="nav-menu">
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#nuestrosServicios">SERVICIOS</a></li>
+            <li><a href="#reservas">RESERVAS</a></li>
+            <li><a href="#galeria">GALERÍA</a></li>
+            <li><a href="#sobreNosotros">SOBRE NOSOTROS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+    </nav>
+
+    <!-- panel desplegable que aparece en movil -->
+    <div class="menu-movil" id="menu-movil">
+        <a href="#inicio" class="menu-movil-link">Inicio</a>
+        <a href="#nuestrosServicios" class="menu-movil-link">Servicios</a>
+        <a href="#reservas" class="menu-movil-link">Reservas</a>
+        <a href="#galeria" class="menu-movil-link">Galería</a>
+        <a href="#sobreNosotros" class="menu-movil-link">Sobre nosotros</a>
+        <a href="#contacto" class="menu-movil-link">Contacto</a>
+    </div>
+</header>
 
     <!-- boton para volver al inicio -->
     <button id="topBtn">⬆</button>
